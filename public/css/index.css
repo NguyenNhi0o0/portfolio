@@ -1,0 +1,56 @@
+.home {
+    height: 100%;
+    padding-top: 40vh;
+    overflow: hidden;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(to right, rgba(39, 39, 39, 0.8), rgba(39, 39, 39, 0.3)), url("../img/model.jpg") center bottom;
+    background-size: cover;
+}
+
+
+.home__greeting {
+    width: 40%;
+
+}
+
+
+.home__name {
+    font-size: 5rem;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    position: relative;
+    border-bottom: 2px solid #fff;
+}
+
+.home__name--last {
+    color: #ff652f;
+    font-weight: 700;
+}
+
+.home .centered__box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    height: 100%;
+    width: 100%;
+}
+
+main .social-icons {
+    position: fixed;
+    bottom: 1rem;
+    left: 1rem;
+}
+
+main .social-icons a {
+    padding: 0.4rem;
+    transition: all 0.5s ease-in-out;
+}
+
+main .social-icons a:hover {
+    color: #ff652f;
+}
+

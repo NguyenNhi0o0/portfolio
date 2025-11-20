@@ -1,0 +1,692 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.home {
+    height: 100%;
+    padding-top: 40vh;
+    overflow: hidden;
+    align-items: center;
+    text-align: center;
+    /* background: linear-gradient(to right, rgba(39, 39, 39, 0.8), rgba(39, 39, 39, 0.3)), center bottom; */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+}
+
+.home__greeting {
+    width: 40%;
+}
+
+.home__name {
+    font-size: 5rem;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    position: relative;
+    border-bottom: 2px solid #fff;
+}
+
+.home__name--last {
+    color: #ff652f;
+    font-weight: 700;
+}
+
+.home .centered__box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-btn {
+    position: absolute;
+    z-index: 1;
+    right: 1rem;
+    top: 1rem;
+    height: 20px;
+    width: 28px;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+
+.menu-btn__burger {
+    position: absolute;
+    right: 0;
+    top: 0.5rem;
+    width: 28px;
+    height: 3px;
+    background: #fff;
+    transition: all 0.5s ease-in-out;
+}
+
+.menu-btn__burger::before {
+    content: "";
+    position: absolute;
+    top: -8px;
+    width: 28px;
+    height: 3px;
+    background: #fff;
+    transition: all 0.5s ease-in-out;
+}
+
+.menu-btn__burger::after {
+    content: "";
+    position: absolute;
+    top: 8px;
+    width: 20px;
+    height: 3px;
+    background: #fff;
+    transition: all 0.5s ease-in-out;
+}
+
+.menu-btn__burger.open {
+    background: transparent;
+}
+
+.menu-btn__burger.open::before {
+    transform: rotate(45deg) translate(5px, 8px);
+}
+
+.menu-btn__burger.open::after {
+    width: 28px;
+    transform: rotate(-45deg) translate(3px, -7px);
+}
+
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    opacity: 0.95;
+    visibility: hidden;
+    justify-content: center;
+}
+
+.nav.open {
+    visibility: visible;
+}
+
+.nav .lang {
+    text-align: end;
+    margin-right: 50px;
+    color: lightblue;
+}
+
+.nav .menu-nav {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    background: #272727;
+    list-style-type: none;
+    padding-right: 1rem;
+    transform: translateY(-100%);
+    transition: all 0.5s ease-in-out;
+}
+
+.nav .menu-nav.open {
+    transform: translateY(0);
+}
+
+.nav .menu-nav__item {
+    transform: translateX(100vw);
+    transition: all 0.5s ease-in-out;
+}
+
+.nav .menu-nav__item.open {
+    transform: translateX(0);
+}
+
+.nav .menu-nav__item.active>a {
+    color: #ff652f;
+}
+
+.nav .menu-nav__link {
+    display: inline-block;
+    font-size: 2rem;
+    padding: 2rem 0;
+    font-weight: 300;
+    text-transform: uppercase;
+    transition: all 0.5s ease-in-out;
+}
+
+.nav .menu-nav__link:hover {
+    color: #ff652f;
+}
+
+.menu-nav__item:nth-child(1) {
+    transition-delay: 0.25s;
+}
+
+.menu-nav__item:nth-child(2) {
+    transition-delay: 0.35s;
+}
+
+.menu-nav__item:nth-child(3) {
+    transition-delay: 0.45s;
+}
+
+.menu-nav__item:nth-child(4) {
+    transition-delay: 0.55s;
+}
+
+.about {
+    padding-bottom: 2rem;
+}
+
+.about__bio-image {
+    height: 80vh;
+    width: 100%;
+    background: linear-gradient(to right, rgba(39, 39, 39, 0.9), rgba(39, 39, 39, 0.3));
+    background-size: cover !important;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.about__bio-image p {
+    margin-bottom: 2rem;
+    font-size: 1rem;
+}
+
+.about__bio {
+    width: 80%;
+    text-align: center;
+}
+
+.about__bio .text-secondary {
+    padding-bottom: 1rem;
+}
+
+.about .jobs {
+    width: 60vw;
+    margin: 2rem auto 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 2rem;
+}
+
+.about .jobs__job {
+    background: #414141;
+    padding: 0.5rem;
+    border-bottom: 5px solid #ff652f;
+}
+
+.about .jobs__job .link {
+    color: lightblue;
+}
+
+.about .jobs__job p {
+    margin: 1rem 0;
+}
+
+.about .jobs h2,
+.about .jobs h3 {
+    margin: 0.5rem 0;
+}
+
+.about .jobs h5 {
+    margin: 0.3rem 0;
+}
+
+.about .jobs ul {
+    list-style-type: none;
+}
+
+.about .jobs ul li {
+    padding: 3px 15px;
+}
+
+.about .social-icons {
+    font-size: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.about footer {
+    font-size: 0.8rem;
+    transform: rotate(90deg) translate(-4rem, -5rem);
+}
+
+.projects {
+    padding-bottom: 2rem;
+    
+}
+
+.projects__bio-image {
+    height: 60vh;                 
+    min-height: 350px; 
+    /* background: linear-gradient(to right, rgba(39, 39, 39, 0.8), rgba(39, 39, 39, 0.3)), url("../img/projects.jpg") center; */
+    background-size: cover !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.projects__bio-image .text-secondary {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    
+}
+
+.projects__items {
+    width: calc(33.333% - 20px);
+    /* 1/3 chiều rộng của container, trừ khoảng cách */
+    display: flex;
+    flex-direction: row;
+    /* Sắp xếp nội dung theo chiều dọc */
+    align-items: center;
+    /* Căn giữa các thành phần theo chiều ngang */
+    flex-wrap: wrap;
+    /* Cho phép các mục bọc xuống dòng khi không đủ không gian */
+    justify-content: space-between;
+    /* Phân bổ khoảng cách giữa các items */
+    width: 60vw;
+    margin: 2rem auto 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 2rem;
+}
+
+.projects__item {
+    position: relative;
+    border-bottom: 5px solid #ff652f;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.projects__item img {
+    width: 100%;
+}
+
+.projects__item::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #ff652f;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+}
+
+.projects__item:hover::after {
+    top: 0;
+    opacity: 0.8;
+}
+
+.projects__item:hover .projects__btn {
+    opacity: 1;
+}
+
+.projects .social-icons {
+    font-size: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.projects footer {
+    font-size: 0.8rem;
+    transform: rotate(90deg) translate(-4rem, -5rem);
+}
+
+.projects__btns {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    text-align: center;
+}
+
+.projects__btn {
+    opacity: 0;
+    color: #fff;
+    transition: all 0.5s ease-in-out;
+}
+
+.projects__btn:hover {
+    color: #000;
+}
+
+.contact {
+    
+    min-height: 100vh;  
+    height: auto;
+    padding-top: 40vh;
+    padding: 3rem 1rem 6rem;  
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background: linear-gradient(to right, rgba(39, 39, 39, 0.9), rgba(39, 39, 39, 0.5)), url("../img/contact.png") center; */
+    background-size: cover !important;
+    background-position: center !important;     /* căn giữa khuôn mặt */
+    background-repeat: no-repeat;
+
+}
+.contact form {
+    margin-top: 6rem;        /* đẩy form xuống dưới header */
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;      /* căn giữa form theo chiều ngang */
+}
+
+.contact h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+}
+
+.contact__list {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 2rem;
+    font-size: 1rem;
+}
+
+.contact .social-icons {
+    font-size: 10px;
+    position: initial;
+    margin-top: 2rem;
+}
+
+.contact .text-secondary {
+    margin-top: 5px;
+}
+
+.contact footer {
+    font-size: 0.8rem;
+}
+
+@media screen and (max-width: 768px) and (min-width: 100px) {
+    html, body {
+        height: auto;
+        min-height: 100%;
+        overflow-x: hidden;
+        overflow-y: auto;       /* bắt buộc phải cuộn được */
+    }
+    .home {
+        font-size: 10px;
+    }
+
+    .home .social-icons {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .home footer {
+        font-size: 0.8rem;
+        transform: rotate(90deg) translate(-4rem, -5rem);
+    }
+
+    .home__name--last {
+        display: none;
+    }
+    
+}
+
+@media screen and (min-width: 768px) {
+    .menu-btn {
+        visibility: hidden;
+    }
+
+    .nav {
+        visibility: visible;
+    }
+
+    .nav .menu-nav {
+        display: block;
+        transform: translateY(0);
+        height: 100%;
+        background: transparent;
+        text-align: center;
+    }
+
+    .nav .menu-nav__item {
+        display: inline;
+        padding-right: 1.5rem;
+    }
+
+    .nav .menu-nav__link {
+        font-size: 1.5rem;
+    }
+
+    .about__bio {
+        font-size: 1.5rem;
+    }
+
+    .projects__bio-image {
+        height: 40vh;
+        
+    }
+
+    .projects__items {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .projects .text-secondary {
+        font-size: 3rem;
+    }
+
+    .contact__list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .projects__items {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .contact__list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    .projects__bio-image {
+        height: 50vh;
+    }
+
+    .projects__items {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .contact__list {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+body {
+    background: #272727;
+    color: #fff;
+    height: 100vh;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1;
+}
+
+h1,
+h2,
+h3 {
+    font-weight: 400;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.text-secondary {
+    color: #ff652f !important;
+}
+
+header {
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+    padding: 1rem;
+}
+
+header.hidden {
+    /* transform: translateY(-100%); */
+    display: none;
+    /* Hide the header by moving it out of view */
+}
+
+main {
+    height: 100%;
+    width: 100%;
+}
+
+main .social-icons {
+    position: fixed;
+    bottom: 1rem;
+    left: 1rem;
+}
+
+main .social-icons a {
+    padding: 0.4rem;
+    transition: all 0.5s ease-in-out;
+}
+
+main .social-icons a:hover {
+    color: #ff652f;
+}
+
+footer {
+    font-size: 1rem;
+    position: fixed;
+    bottom: 0.4rem;
+    text-align: right;
+    right: 1rem;
+    padding: 1rem;
+    color: #fff;
+}
+
+/*# sourceMappingURL=main.css.map */
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #b9b6b6;
+    color: #000;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Desktop vẫn giữ nguyên */
+.projects__bio-image,
+.about__bio-image,
+.contact,
+.home__bio-image {
+    background-size: cover;
+    background-position: center;      /* đảm bảo desktop cũng đẹp */
+    background-repeat: no-repeat;
+}
+
+/* Mobile fix (màn ≤ 768px) */
+@media (max-width: 768px) {
+    .projects__bio-image,
+    .about__bio-image,
+    .contact,
+    .home__bio-image {
+        background-position: center center !important;  /* luôn lấy trung tâm */
+        background-size: cover !important;              /* tránh zoom sai */
+    }
+}
+
+
+/* --- Contact Info Box --- */
+.contact-info-box {
+    margin: 4rem auto 2rem auto;
+    max-width: 450px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(6px);
+    padding: 2rem 2.5rem;
+    border-radius: 12px;
+    color: white;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.contact-info-title {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #ffb86c;
+}
+
+.contact-info-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.2rem;
+    justify-content: center;
+    margin-bottom: 0.9rem;
+}
+
+.contact-info-row i {
+    font-size: 1.4rem;
+    color: #ffb86c;
+}
+
+/* --- Social Icons --- */
+.social-icons i {
+    font-size: 1.6rem !important;
+    margin: 0 10px;
+    transition: 0.3s;
+}
+
+.social-icons i:hover {
+    color: #ffffff !important;
+    transform: translateY(-4px);
+}
